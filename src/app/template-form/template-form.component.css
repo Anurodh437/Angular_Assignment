@@ -12,3 +12,8 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.top{
+  padding-top: 3.3rem;
+}
+

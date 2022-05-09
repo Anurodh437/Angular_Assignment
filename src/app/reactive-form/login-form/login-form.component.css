@@ -1,5 +1,5 @@
 .bgs {
-    background-image: url("../../assets/background.webp");
+    background-image: url("../../../assets/background.webp");
   }
   
   input::-webkit-outer-spin-button,
@@ -12,7 +12,7 @@
   input[type=number] {
     -moz-appearance: textfield;
   }
-  
+
   .top{
-    padding-top: 3.3rem;
+    padding-top: 6.3rem;
   }

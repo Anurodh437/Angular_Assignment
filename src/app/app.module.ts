@@ -6,6 +6,9 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { LoginFormComponent } from './reactive-form/login-form/login-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -13,11 +16,14 @@ import { FormsModule } from '@angular/forms';
     TemplateFormComponent,
     ReactiveFormComponent,
     NavbarComponent,
+    LoginFormComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

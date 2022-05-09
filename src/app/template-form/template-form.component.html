@@ -1,14 +1,15 @@
 <div class="container-fluid bgs">
-  <div class="row">
+  <div class="row top">
     <div class="display-6 col-sm-6 text-center">Registration Form</div>
     <div class="display-6 col-sm-6 text-center">Table</div>
   </div>
   <div class="row mt-4">
     <div class="card bg-light col-sm-5 mx-5 mb-5 p-3">
-      <form #userDetail="ngForm" (ngSubmit)="onSubmit(userDetail.value)">
+      <form #userDetail="ngForm" (ngSubmit)="onSubmit(userDetail)">
         <div class="form-group mb-3">
           <label>Name:</label>
           <input
+            placeholder="Enter name"
             required
             type="text"
             #name="ngModel"
@@ -27,6 +28,7 @@
         <div class="form-group mb-3">
           <label>College:</label>
           <input
+          placeholder="Enter College Name"
             required
             type="text"
             #college="ngModel"
@@ -45,6 +47,7 @@
         <div class="mb-3">
           <label for="mobile" class="form-label">CGPA</label>
           <input
+          placeholder="Enter CGPA out of 10"
             required
             type="number"
             #cgpa="ngModel"
