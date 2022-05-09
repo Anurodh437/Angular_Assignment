@@ -19,14 +19,14 @@ export class LoginFormComponent implements OnInit {
   // to check the user is already there or not if there then send the conditional messages.
   check: boolean = false;
 
-  constructor(private fb: FormBuilder,private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   loginUser = this.fb.group({
     userName: ['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(8)]],
   });
 
-  userList = JSON.parse(localStorage.getItem('arr1') || '[]');
+  userList = JSON.parse(localStorage.getItem('userDetails') || '[]');
 
   ngOnInit(): void {}
 
@@ -38,10 +38,10 @@ export class LoginFormComponent implements OnInit {
         this.loginUser.value.password == detail.password
       ) {
         this.check = true;
-        alert("User is logged in successfully");
+        alert('User is logged in successfully');
       }
     }
-    alert("Username or password is incorrect ")
+    alert('Username or password is incorrect.Please SignUp!');
     this.router.navigate(['reactive']);
   }
 }

@@ -39,9 +39,7 @@ export class ReactiveFormComponent implements OnInit {
     return /^\d{10}$/.test(numbers.value) ? null : numbers;
   }
 
-  constructor(private fb: FormBuilder) {
-    localStorage.setItem('arr', '[]');
-  }
+  constructor(private fb: FormBuilder) {}
 
   signUp = this.fb.group({
     userName: ['', Validators.required],
@@ -51,14 +49,20 @@ export class ReactiveFormComponent implements OnInit {
     mobile: ['', [Validators.required, this.validateMobile]],
   });
 
-  person:Person = new Person('','','','','');
-  userList :Person[] = JSON.parse(localStorage.getItem('arr1') || '[]');
+  person: Person = new Person('', '', '', '', '');
+  userList: Person[] = JSON.parse(localStorage.getItem('userDetails') || '[]');
 
   ngOnInit(): void {}
   onSubmit(signUp: any) {
-    this.person  = new Person(signUp.value.userName,signUp.value.fatherName,signUp.value.email,signUp.value.password,signUp.value.mobile)
+    this.person = new Person(
+      signUp.value.userName,
+      signUp.value.fatherName,
+      signUp.value.email,
+      signUp.value.password,
+      signUp.value.mobile
+    );
     this.userList.push(this.person);
-    localStorage.setItem('arr1',JSON.stringify(this.userList))
+    localStorage.setItem('userDetails', JSON.stringify(this.userList));
     this.signUp.reset();
   }
 }
