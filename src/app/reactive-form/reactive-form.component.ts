@@ -49,6 +49,7 @@ export class ReactiveFormComponent implements OnInit {
     mobile: ['', [Validators.required, this.validateMobile]],
   });
 
+  // created a person instance to keep track of user input fields
   person: Person = new Person('', '', '', '', '');
   userList: Person[] = JSON.parse(localStorage.getItem('userDetails') || '[]');
 
